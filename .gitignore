@@ -1,0 +1,12 @@
+venv/
+*.pyc
+__pycache__/
+instance/
+
+NOTES.txt
+
+Flask-Image-Gallery/
+bootstrap-4.0.0-dist/
+bootstrap-5.1.3-dist/
+annotations/
+testing/

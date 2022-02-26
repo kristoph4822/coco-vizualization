@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <style>
+        div.gallery {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 180px;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+
+    <script type=text/javascript src="{{
+        url_for('static', filename='js/main.js') }}"></script>
+</head>
+
+<body>
+
+    {% for i in range(images | length) %}
+    <div class="gallery">
+        <a target="_blank">
+            <img src="{{ images[i] }}" width="600" height="400">
+        </a>
+        <div class="desc">{{ anns[i] }}</div>
+    </div>
+    {% endfor %}
+
+    <button type="button" onclick="myFunction()">Try it</button>
+
+</body>
+
+</html>
