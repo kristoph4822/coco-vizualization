@@ -1,3 +1,0 @@
-to powienien byc json z dependendencies w npm
-
-    minimasonry

@@ -1,2 +1,0 @@
-# This is where the routes are defined. It may be split into a package of its own (yourapp/views/) with related views grouped together into modules.
-#At some point you may find that you have a lot of related routes. If you’re like me, your first thought will be to split views.py into a package and group those views into modules. When you’re at this point, it may be time to factor your application into blueprints.

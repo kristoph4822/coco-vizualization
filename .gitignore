@@ -1,12 +1,18 @@
 venv/
 *.pyc
 __pycache__/
+
 instance/
 
 NOTES.txt
+DOCS.txt
+DATA_STRUCTURES.txt
 
-Flask-Image-Gallery/
-bootstrap-4.0.0-dist/
-bootstrap-5.1.3-dist/
+inspirations/
+fiftyone/
 annotations/
 testing/
+*.code-workspace
+*.txt
+
+setup.py
