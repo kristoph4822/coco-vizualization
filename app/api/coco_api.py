@@ -7,7 +7,7 @@ from app.api.api_interface import ApiInterface
 class CocoApi(ApiInterface):
 
     # All available datasets
-    DATASETS = [
+    AVAILABLE_DATASETS = [
         "train2014",
         "val2014",
         "train2017",
@@ -20,7 +20,7 @@ class CocoApi(ApiInterface):
 
 
     def load_dataset(self, dataset):
-        if dataset not in self.DATASETS:
+        if dataset not in self.AVAILABLE_DATASETS:
             raise ValueError('Invalid dataset value.')      
 
         dir = os.path.dirname(__file__)
@@ -39,59 +39,33 @@ class CocoApi(ApiInterface):
 
 
     def get_images(self, img_ids):
-        """
-        Gets specific images by ids (used for tags filtering)
-
-        Args:
-            img_ids (_type_): _description_
-
-        Returns:
-            _type_: _description_
-        """
 
         img_ids = [int(id) for id in img_ids]
         images = self.map_images(self.coco_api.loadImgs(img_ids))
-
-        '''
-        anns = self.get_annotations(img_ids)
-        captions = self.get_captions(img_ids)
-
-        return {
-            "images": images,
-            "anns": anns,
-            "captions": captions,
-            "n_images": len(images),
-            "categories": []
-        }
-        '''
+        
         return images
         
 
-
     def get_annotations(self, img_ids):
-        """
-        Gets annotations for specific img_ids
-
-        Args:
-            ids (_type_): _description_
-
-        Returns:
-            _type_: _description_
-        """
         
         ann_dict = {}
         for id in img_ids:
             ann_ids = self.coco_api.getAnnIds(imgIds=id)
             ann_dict[id] = self.coco_api.loadAnns(ann_ids)
 
-            for ann in ann_dict[id]:  # map cat id to cat name
+            for ann in ann_dict[id]:
+                # add category name
                 ann["category_name"] = self.cat_id_to_name(ann["category_id"])
+                
+                # unnest segmentation
+                if isinstance(ann["segmentation"], list) and len(ann["segmentation"]) == 1:
+                    ann["segmentation"] = ann["segmentation"][0]
 
         return ann_dict
 
 
-    # Get captions for specific img ids
     def get_captions(self, img_ids):
+
         captions = {}
         for id in img_ids:
             annIds = self.coco_caps.getAnnIds(imgIds=id)
@@ -116,34 +90,30 @@ class CocoApi(ApiInterface):
             cat_ids = self.coco_api.getCatIds(catNms=cat_names)  # map cat_names to cat_ids
             img_ids = self.coco_api.getImgIds(catIds=cat_ids)
 
-        '''
-            images = self.coco_api.loadImgs(img_ids)
-            images = self.map_images(images)
-            anns = self.get_annotations(img_ids)
-            captions = self.get_captions(img_ids)
-
-            return {
-                "images": images,
-                "anns": anns,
-                "captions": captions,
-                "n_images": len(images),
-                "categories": cat_names
-            }
-        '''
-
         return img_ids
 
 
-    # Map cat_id to cat_name
+    # Maps category id to category name
     def cat_id_to_name(self, cat_id):
         return self.coco_api.loadCats(cat_id)[0]['name']
 
 
-    # Convert images dicts (this case only renaming 'coco_url' to 'url')
+    # Reformats images dicts (now only renaming 'coco_url' to 'url')
     def map_images(self, images):
+
         for img in images:
             if "coco_url" in img:
                 img['url'] = img.pop('coco_url')
 
         return images
 
+
+    def get_dataset(self):
+        return self.dataset
+
+    def get_all_categories(self):
+        return self.all_categories
+
+    def get_available_datasets(self):
+        return self.AVAILABLE_DATASETS
+    

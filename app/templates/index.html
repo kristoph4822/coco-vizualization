@@ -29,8 +29,9 @@
     <link rel='stylesheet' type='text/css' href='../static/css/gallery.css'>
     <link rel='stylesheet' type='text/css' href='../static/css/modal.css'>
 
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
     <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/drawing.js') }}"></script>
 
     <!-- Load data to javascript -->
     <script>
@@ -266,7 +267,7 @@
                 <!-- Pagining Info Display -->
                 <div class="paging-info">
                     <div>Page: {{ data['grid_params']['pg_num'] }} / {{ data['grid_params']['n_pages'] }}</div>
-                    <div>Total images: {{ data['img_page']['n_images'] }}</div>
+                    <div>Total images: {{ data['n_images'] }}</div>
                 </div>
 
             </div>

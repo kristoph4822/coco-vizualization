@@ -1,9 +1,20 @@
-var imgGridParameters = {
+///// IMAGES DATA FROM FLASK ////
+var backendData; 
+
+function loadData(data) {
+  // Load data from Flask app through HTML template into JS variable, called in HTML head
+  backendData = data;
+};
+
+
+///// CONSTANTS //////
+
+const imgGridParameters = {
   outsidePadding: 10,
   insidePaddingImageRatio: 0.05,
 }
 
-var bboxParameters = {
+const bboxParameters = {
   lineWidth: 3,
   colorsList: [
     '#e6194b', '#3cb44b', '#ffe119',
@@ -17,7 +28,7 @@ var bboxParameters = {
   labelFont: "13px Arial"
   }
 
-var segmentationParameters = {
+const  segmentationParameters = {
   lineWidth: 2,
   colorsList: [
     '#e6194b', '#3cb44b', '#ffe119',
@@ -32,7 +43,7 @@ var segmentationParameters = {
   transparency: 0.5
 }
 
-var taggingParameters = {
+const taggingParameters = {
   tagSizeRatio: 0.2,
   selectColor: '#FF0000',
   deselectColor: '#202020',
@@ -40,7 +51,11 @@ var taggingParameters = {
   availableTagKeys: ['0', '1', '2', '3', '4', '5', '6'] //0 for untagging
 }
 
-var viewParameters = {
+const  viewParameters = {
   padding: 15
 }
+
+
+
+
 
