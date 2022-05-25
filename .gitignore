@@ -10,9 +10,8 @@ DATA_STRUCTURES.txt
 
 inspirations/
 fiftyone/
-annotations/
 testing/
 *.code-workspace
-*.txt
+*.json
 
 setup.py
