@@ -1,0 +1,57 @@
+.gallery {
+    grid-area: gallery;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 1.7fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "page-controls"
+        "images-display";
+    display: inline-block;
+    width: 110%;
+    padding-top: 40px;
+}
+
+.page-controls {
+    grid-area: page-controls;
+    padding-left: 40px;
+    padding-bottom: 60px;
+    clear: left;
+}
+
+.images-display {
+    grid-area: images-display;
+    padding-left: 20px;
+}
+
+.canvas {
+    width: 100%;
+}
+
+.paging-info {
+    display: block;
+    padding-left: 35px;
+    float: left;
+    width: 200px;
+    border-left: 2px solid grey;
+}
+
+.paging-buttons {
+    padding-top: 5px;
+    float: left;
+    width: 220px;
+}
+
+#goto-page-input {
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-right: 40px;
+    float: left;
+    border-left: 2px solid grey;
+    width: 230px;
+}
+
+.page-control-buttons {
+    width: 90px;
+}

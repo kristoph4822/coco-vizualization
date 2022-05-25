@@ -1,0 +1,55 @@
+.controls {
+    grid-area: controls;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "dataset-selection"
+        "display-controls"
+        "filtering"
+        "tagging";
+
+    padding-right: 0px;
+    padding-left: 20px;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 40px;
+    width: 100%;
+}
+
+.dataset-selection {
+    grid-area: dataset-selection;
+    padding-bottom: 20px;
+    padding-right: 10px;
+}
+
+.display-controls {
+    grid-area: display-controls;
+}
+
+.filtering {
+    grid-area: filtering;
+}
+
+.tagging {
+    grid-area: tagging;
+}
+
+.padding-top {
+    padding-top: 15px;
+}
+
+.right-side-go-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+.options-panel {
+    border-top: 2px dashed grey;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+}
