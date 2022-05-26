@@ -5,7 +5,7 @@ from app.api.api_interface import ApiInterface
 
 
 class CocoApi(ApiInterface):
-    
+
 
     def __init__(self, available_datasets):
         self.AVAILABLE_DATASETS = available_datasets
