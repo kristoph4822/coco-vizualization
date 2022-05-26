@@ -2,16 +2,10 @@ venv/
 *.pyc
 __pycache__/
 
-instance/
-
 NOTES.txt
 DOCS.txt
 DATA_STRUCTURES.txt
 
-inspirations/
-fiftyone/
 testing/
 *.code-workspace
 *.json
-
-setup.py

@@ -1,4 +1,0 @@
-flask==2.0.2
-cython
-pycocotools
-Flask-Cors

@@ -8,7 +8,7 @@ def download_tags_to_file(tags_dict):
     file_path = EXPORT_FILE_PATH
     full_path = os.path.join(dir, file_path)
 
-    with open(full_path, 'w') as file:
+    with open(full_path, 'w+') as file:
         file.write(json.dumps(tags_dict))
 
     return full_path
