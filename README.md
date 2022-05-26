@@ -21,7 +21,7 @@ python run.py
 You can easily add COCO datasets (2014 & 2017 train/val) to this application:
   1. Download datasets annotations from COCO website: https://cocodataset.org/#download
   2. Put instances and captions JSON files in appropriate folders in `/app/api/annotations/...`
-  3. Add datasets names to DATASETS variable in config.py file
+  3. Add datasets names to `DATASETS` variable in `config.py` file
 
 
 ### Preview
