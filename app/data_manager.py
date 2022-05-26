@@ -50,22 +50,22 @@ class DataManager:
     '''
 
 
-    def __init__(self, api_object, categories, grid_slots, columns):
+    def __init__(self, api_object, initial_settings):
         self.api = api_object
         self.grid_params = {
             'pg_num': 1,
-            'grid_slots': grid_slots,
-            'initial_columns': columns,
+            'grid_slots': initial_settings["GRID_SLOTS"],
+            'initial_columns': initial_settings["COLUMNS"],
             'n_pages': 0
         }
         self.filters = {
             "selected_tags": [],
-            "selected_categories": categories
+            "selected_categories": initial_settings["CATEGORIES"]
         }
         self.tags = {}
 
         # load images metadata, annotations and captions for inital categories and update grid params
-        img_ids = self.api.get_image_ids_from_categories(categories)
+        img_ids = self.api.get_image_ids_from_categories(initial_settings["CATEGORIES"])
         self.load_img_data(img_ids)
         self.update_pages()
 

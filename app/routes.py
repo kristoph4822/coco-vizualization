@@ -10,10 +10,8 @@ from app.export.file_handler import download_tags_to_file
 
 # data manager for handling all application data
 data_manager = DataManager(
-    CocoApi(app.config["INITIAL_DATASET"]),
-    app.config["INITIAL_CATEGORIES"],
-    app.config["INITIAL_GRID_SLOTS"],
-    app.config["INITIAL_COLUMNS"]
+    CocoApi(app.config["DATASETS"]),
+    app.config["INITIAL_SETTINGS"]
 )
 
 # local server for hosting local folder to load images from
