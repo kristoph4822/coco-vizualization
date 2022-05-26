@@ -5,19 +5,12 @@ from app.api.api_interface import ApiInterface
 
 
 class CocoApi(ApiInterface):
+    
 
-    # All available datasets
-    AVAILABLE_DATASETS = [
-        "train2014",
-        "val2014",
-        "train2017",
-        "val2017",
-    ]
-
-
-    def __init__(self, dataset):
-        self.load_dataset(dataset)
-
+    def __init__(self, available_datasets):
+        self.AVAILABLE_DATASETS = available_datasets
+        self.load_dataset(available_datasets[0])
+        
 
     def load_dataset(self, dataset):
         if dataset not in self.AVAILABLE_DATASETS:
