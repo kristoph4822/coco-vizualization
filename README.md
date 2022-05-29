@@ -7,10 +7,10 @@ Clone this repository locally:
 ```
 git clone https://github.com/kristoph4822/image-datasets-explorer.git
 ```
-Install application (preferably into a virtualenv):
+Install required packages (preferably into a virtualenv):
 ```
 cd image-datasets-explorer
-python setup.py install
+pip install -r requirements.txt
 ```
 Now you can run application:
 ```
