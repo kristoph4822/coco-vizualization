@@ -1,5 +1,4 @@
 venv/
-venv2/
 *.pyc
 __pycache__/
 
@@ -8,6 +7,4 @@ DOCS.txt
 DATA_STRUCTURES.txt
 
 testing/
-*.code-workspace
-
-.gitignore
+*.code-workspace 
