@@ -3,16 +3,17 @@ Flask application for exploring and managing image datasets. Currently handles o
 
 
 ### Installation
-Clone this repository locally:
+1. Install **Visual C++ 2015 build tools** from [here](https://go.microsoft.com/fwlink/?LinkId=691126).
+2. Clone this repository locally:
 ```
 git clone https://github.com/kristoph4822/image-datasets-explorer.git
 ```
-Install required packages (preferably into a virtualenv):
+3. Install required packages (preferably into a virtualenv):
 ```
 cd image-datasets-explorer
 pip install -r requirements.txt
 ```
-Now you can run application:
+4. Now you can run application:
 ```
 python run.py
 ```
